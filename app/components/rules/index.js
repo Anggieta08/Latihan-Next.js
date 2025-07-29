@@ -6,7 +6,6 @@ import Image from 'next/image';
 export const Rules = ({elemen_gambar}) => {
   return (
     <div>
-        {/* Aturan Main */}
         <div className="reasons-section">{elemen_gambar}
           <h4>🏁 YUK SIMAK ATURAN MAINNYA 🏁</h4>
           <div className="rules-list">
@@ -24,7 +23,6 @@ export const Rules = ({elemen_gambar}) => {
           </div>
         </div>
 
-        {/* Kenapa Harus Datang */}
         <div className="reasons-section">
           <h4>🤔 Kenapa Harus Datang ?</h4>
           <div className="reasons-grid">

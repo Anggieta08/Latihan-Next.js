@@ -5,11 +5,13 @@ import { Landing } from "./components/landing";
 import { Rules } from "./components/rules";
 import { Footer } from "./components/footer";
 import ImageLogo from '@/public/Gambar/Gambar_Logo.png'
+import ImageKaca_Pembesar from '@/public/Gambar/Kaca_Pembesar.png'
+import Imagesel from '@/public/Gambar/sel.png'
+import Imagevirus from '@/public/Gambar/virus.png'
 
 
-// ✅ Gambar dari public folder (tanpa import langsung)
 const gambarBunga = "/Gambar/Gambar_Bunga.png";
-const gambarBuku = "/Gambar/GAmbar_Buku.png"; // pastikan nama file-nya benar
+const gambarBuku = "/Gambar/Gambar_Buku.png"; 
 const gambarLampu = "/Gambar/Gambar_Lampu.png";
 const gambarBotolKimia = "/Gambar/Gambar_Botol_Kimia.png";
 const gambarLove = "/Gambar/Gambar_Love.png";
@@ -21,7 +23,6 @@ export default function Page() {
   return (
     <main>
       <div className="card-container">
-        {/* Gambar bunga dan buku sebagai dekorasi */}
         <Image
           src={gambarBunga}
           alt="Dekorasi Bunga"
@@ -53,12 +54,16 @@ export default function Page() {
           height={250}
         />
 
-        {/* Komponen Landing dengan gambar variabel */}
-        <Landing var_terima={label} tanggal="6 Agustus 2025" gambar={gambarLampu} gambar_logo={ImageLogo}  />
-        {/* <Landing var_terima={label} tanggal="6 Agustus 2025" gambar={gambarBuku} /> */}
-
-        {/* Komponen Rules */}
-        <Rules elemen_gambar={gambarLampu} />
+       <Landing
+  var_terima={label}
+  tanggal="6 Agustus 2025"
+  gambar={gambarLampu}
+  gambar_logo={ImageLogo}
+  kaca_pembesar={ImageKaca_Pembesar}
+  sel={Imagesel}
+  virus={Imagevirus}
+/>
+        <Rules elemen_gambar={gambarLampu} virus={Imagevirus} />
       </div>
 
       <Footer />

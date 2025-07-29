@@ -7,10 +7,11 @@ import ImageLampu from '@/public/Gambar/Gambar_Lampu.png'
 import ImageTanganKanan from '@/public/Gambar/Gambar_Tangan_Kanan.png'
 import ImageTanganKiri from '@/public/Gambar/Gambar_Tangan_Kiri.png'
 import Gambar_Lampu from '@/public/Gambar/Gambar_Lampu.png';
-import Gambar_Buku from '@/public/Gambar/Gambar_Buku.png'
+import Imagesel from '@/public/Gambar/sel.png';
+import Imagevirus from '@/public/Gambar/virus.png';
 
 
-export const Landing = ({var_terima, tanggal, gambar, gambar_logo}) => {
+export const Landing = ({var_terima, tanggal, gambar, gambar_logo, kaca_pembesar, sel, virus,  }) => {
       const [timeLeft, setTimeLeft] = useState({
         days: "--",
         hours: "--",
@@ -47,7 +48,7 @@ export const Landing = ({var_terima, tanggal, gambar, gambar_logo}) => {
         return () => clearInterval(interval);
       }, []);
   return (
-    <>
+    <>  
         <div className="card">
           <div className="card-logo">
             <div className="logo-wrapper">
@@ -55,7 +56,9 @@ export const Landing = ({var_terima, tanggal, gambar, gambar_logo}) => {
               <Image src={ImageBiondFest} alt="Logo BiondFest" width={250} height={150} />
               <Image src={Image135Tahun} alt="Logo 135 Tahun" width={150} height={150} />
               <Image src={ImageLampu} alt="Gambar Footer" width={100} height={100} />
-
+              <Image src={kaca_pembesar} alt="Gambar Footer" width={100} height={100} />
+              <Image src={Imagesel} alt="Gambar sel" width={100} height={100} />
+              <Image src={Imagevirus} alt="Gambar virus" width={100} height={100} />
             </div>
           </div>
 
@@ -95,3 +98,4 @@ export const Landing = ({var_terima, tanggal, gambar, gambar_logo}) => {
 
   )
 }
+ 

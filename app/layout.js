@@ -1,9 +1,11 @@
-import './globals.css'
+import './globals.css'; // Gunakan ini jika file berada di folder /app
+// Hapus baris di bawah jika tidak ada file styles/globals.css di luar folder /app
+// import '../styles/globals.css';
 
 export const metadata = {
   title: 'HUT Bio Farma 135 Tahun',
   description: 'Perayaan HUT ke-135 Bio Farma dengan gaya retro futuristik!',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -19,5 +21,5 @@ export default function RootLayout({ children }) {
       </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }
