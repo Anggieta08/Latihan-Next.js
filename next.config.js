@@ -2,5 +2,6 @@
 module.exports = {
   images: {
     domains: ['infobaik.id'],
+    
   },
 };

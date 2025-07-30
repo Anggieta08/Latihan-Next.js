@@ -1,129 +1,84 @@
-'use client';
+ "use client";
 
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
-import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell, LineChart, Line
-} from 'recharts';
+const barData = [
+  { name: "Feb", product: 400 },
+  { name: "Mar", product: 500 },
+  { name: "Apr", product: 300 },
+  { name: "May", product: 600 },
+  { name: "Jun", product: 450 },
+  { name: "Jul", product: 250 },
+];
 
-export default function DashboardPage() {
-  const newProductData = [
-    { name: 'Feb 1', Produk: 500 },
-    { name: 'Feb 3', Produk: 750 },
-    { name: 'Feb 5', Produk: 600 },
-    { name: 'Feb 7', Produk: 850 },
-    { name: 'Feb 9', Produk: 700 },
-  ];
+const pieData = [
+  { name: "A", value: 400 },
+  { name: "B", value: 300 },
+  { name: "C", value: 300 },
+  { name: "D", value: 200 },
+];
 
-  const pieData = [
-    { name: 'Category A', value: 400 },
-    { name: 'Category B', value: 300 },
-    { name: 'Category C', value: 300 },
-    { name: 'Category D', value: 200 },
-  ];
+const COLORS = ["#ff4b6e", "#ffc93c", "#36d399", "#7c3aed"];
 
-  const lineData = [
-    { time: '7:00', value: 200 },
-    { time: '8:00', value: 500 },
-    { time: '9:00', value: 300 },
-    { time: '10:00', value: 700 },
-  ];
-
-  const salesStats = [
-    { label: '3 Monate', value: '2GBs 09/10' },
-    { label: '2 Monate', value: '6GBs 09/10' },
-    { label: '1 Monat', value: '10GBs 09/10' },
-  ];
-
-  const pieColors = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042'];
-
-const [user, setUser] = useState(null);
-
-useEffect(() => {
-  setUser({
-    name: 'John Doe',
-    role: 'Product Manager',
-    image: "/Gambar/profil.jpg",
-  });
-}, []);
-
-
+export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex">
-      <aside className="w-64 bg-gray-800 p-4">
-        <div className="text-2xl font-bold mb-8">Prodcr Management</div>
-        <nav className="space-y-4 text-gray-300">
-          <div>🧾 Oursse</div>
-          <div>📦 Prroduction</div>
-          <div>📝 Memanisi</div>
-          <div>📊 Pookensi</div>
-          <div className="text-white font-semibold">📁 Proko</div>
-          <div>📂 Kuace</div>
-        </nav>
+    <div className="dashboard-container">
+      <aside className="sidebar">
+        <h2>Welcome</h2>
+        <Link href="/dashboard">📊 Dashboard</Link>
+        <Link href=" /user">👤 User</Link>
+        <Link href="/produk">📦 Produk</Link>
+        <Link href="/laporan">📑 Laporan</Link>
       </aside>
 
-      <main className="flex-1 p-8 space-y-6">
-        <h1 className="text-3xl font-bold">Total PProducts</h1>
+  
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white text-black rounded-xl p-6 shadow-lg text-center">
-            <Image
-              src="/Gambar/profil.jpg"
-              width={80}
-              height={80}
-              alt="User"
-              className="rounded-full mx-auto"
-            />
-            <p className="mt-4 text-lg font-bold">Total Products</p>
-            <p className="text-sm text-gray-500">New Product</p>
-            <div className="mt-4 bg-green-300 text-center text-black font-bold py-1 rounded-full w-10 mx-auto">
-              4
+      <main className="main-content">
+        <div className="header">
+          <h1>Total Product</h1>
+        </div>
+        <div className="grid">
+          <div className="card center">
+        <Image src="/Gambar/profil.jpeg" alt="User" width={60} height={60} />
+            <p>Total Product</p>
+            <h2>4</h2>
+          </div>
+
+          <div className="card">
+            <div className="bar-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={barData}>
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Bar dataKey="product" fill="#4f46e5" />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white text-black p-4 rounded-xl shadow-lg">
-            <h2 className="font-bold mb-2">New Products</h2>
-            <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={newProductData}>
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="Produk" fill="#4ade80" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-
-          <div className="bg-white text-black p-4 rounded-xl shadow-lg">
-            <h2 className="font-bold mb-2">Product Categories</h2>
-            <div className="flex flex-col md:flex-row justify-between">
-              <PieChart width={150} height={150}>
-                <Pie data={pieData} dataKey="value" outerRadius={60}>
-                  {pieData.map((_, i) => (
-                    <Cell key={`cell-${i}`} fill={pieColors[i % pieColors.length]} />
-                  ))}
-                </Pie>
-              </PieChart>
-              <LineChart width={200} height={150} data={lineData}>
-                <Line type="monotone" dataKey="value" stroke="#8884d8" />
-              </LineChart>
+          
+          <div className="card">
+            <div className="pie-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie data={pieData} cx="50%" cy="50%" outerRadius={60} dataKey="value">
+                    {pieData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
             </div>
           </div>
-        </div>
 
-        <div className="bg-white text-black p-4 rounded-xl shadow-lg">
-          <h2 className="font-bold mb-4">Sales Statistics</h2>
-          <ul className="space-y-3">
-            {salesStats.map((s, i) => (
-              <li key={i} className="flex justify-between items-center border-b pb-2">
-                <span>{s.label}</span>
-                <span className="font-bold text-purple-600">{s.value}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="card" style={{ gridColumn: "span 2" }}>
+            <h2>Sales Statistics</h2>
+            <div style={{ background: "#7c3aed", height: "20px", margin: "10px 0", borderRadius: "6px", width: "80%" }}></div>
+            <div style={{ background: "#36d399", height: "20px", margin: "10px 0", borderRadius: "6px", width: "60%" }}></div>
+            <div style={{ background: "#ffc93c", height: "20px", margin: "10px 0", borderRadius: "6px", width: "50%" }}></div>
+          </div>
         </div>
       </main>
     </div>
