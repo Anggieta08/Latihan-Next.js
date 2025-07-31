@@ -480,8 +480,8 @@ input {
   font-size: 14px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  margin-top: 0;       /* pastikan tidak ada jarak atas */
-  margin-bottom: 10px; /* beri jarak antar field berikutnya */
+  margin-top: 0;       
+  margin-bottom: 10px; 
 }
 
 /* Reset dasar */

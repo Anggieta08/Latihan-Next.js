@@ -3,6 +3,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function UserPage() {
   const users = [
@@ -10,29 +11,29 @@ export default function UserPage() {
       id: 1,
       name: "Andi Saputra",
       email: "andi@example.com",
-      role: "Admin",
-      photo: "https://randomuser.me/api/portraits/men/32.jpg",
+      role: "user",
+      img: "/Gambar/profil.jpeg",
     },
     {
       id: 2,
       name: "Budi Santoso",
       email: "budi@example.com",
       role: "User",
-      photo: "https://randomuser.me/api/portraits/men/45.jpg",
+      img: "/Gambar/profil.jpg",
     },
     {
       id: 3,
       name: "Citra Dewi",
       email: "citra@example.com",
-      role: "Editor",
-      photo: "https://randomuser.me/api/portraits/women/44.jpg",
+      role: "user",
+      img: "/Gambar/profil.jpeg",
     },
     {
       id: 4,
       name: "Dewi Lestari",
       email: "dewi@example.com",
       role: "User",
-      photo: "https://randomuser.me/api/portraits/women/65.jpg",
+      img: "/Gambar/profil.jpeg",
     },
   ];
 

@@ -1,5 +1,5 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable react/jsx-no-comment-textnodes */
+ /* eslint-disable react/jsx-no-comment-textnodes */
+import Image from "next/image"
 
 {user && (
   <div className="bg-white text-black rounded-xl p-6 shadow-lg text-center">

@@ -1,8 +1,9 @@
- "use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import Sidebar from "../components/sidebar";
 
 const barData = [
   { name: "Feb", product: 400 },
@@ -25,16 +26,7 @@ const COLORS = ["#ff4b6e", "#ffc93c", "#36d399", "#7c3aed"];
 export default function Dashboard() {
   return (
     <div className="dashboard-container">
-      <aside className="sidebar">
-        <h2>Welcome</h2>
-        <Link href="/dashboard">📊 Dashboard</Link>
-        <Link href=" /user">👤 User</Link>
-        <Link href="/produk">📦 Produk</Link>
-        <Link href="/laporan">📑 Laporan</Link>
-      </aside>
-
-  
-
+      <Sidebar/>
       <main className="main-content">
         <div className="header">
           <h1>Total Product</h1>
