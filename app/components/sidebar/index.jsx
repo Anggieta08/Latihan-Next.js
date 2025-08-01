@@ -1,9 +1,10 @@
+// components/Sidebar/index.jsx
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import React, { useState } from 'react';
+import Link from 'next/link';
 
-export default function Sidebar() {
+const Sidebar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
@@ -11,10 +12,26 @@ export default function Sidebar() {
   };
 
   return (
-   <><Sidebar />
-   <div className="dropdown-container">
+    <aside className="sidebar">
+      <h2>Menu</h2>
+      <Link href="/dashboard">📊 Dashboard</Link>
+      <Link href="/user">👤 User</Link>
 
-    </div><style jsx>{`
+      <div className="dropdown-container">
+        <button className="dropdown-toggle" onClick={toggleDropdown}>
+          📦 Produk ▾
+        </button>
+        {showDropdown && (
+          <div className="dropdown-menu">
+            <Link href="/produk/generik">• Generik</Link>
+            <Link href="/produk/etikal">• Etikal</Link>
+            <Link href="/produk/otc">• OTC & Herbal</Link>
+            <Link href="/produk/kosmetik">• Kosmetik</Link>
+          </div>
+        )}
+      </div>
+
+      <style jsx>{`
         .sidebar {
           width: 220px;
           background: #1e293b;
@@ -69,6 +86,9 @@ export default function Sidebar() {
           background: #475569;
           border-radius: 4px;
         }
-      `}</style></>
+      `}</style>
+    </aside>
   );
-}
+};
+
+export default Sidebar;

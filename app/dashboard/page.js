@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import Sidebar from "../components/sidebar";
+import Sidebar from "../components/sidebar/index.jsx";
 
 const barData = [
   { name: "Feb", product: 400 },

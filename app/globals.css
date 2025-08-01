@@ -492,9 +492,21 @@ input {
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-body {
-  background: #1a1a2e;
-  color: white;
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: none;  /* hilangkan background default */
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;    /* ambil tinggi full layar */
+  width: 100vw;         /* ambil lebar full layar */
+  margin: 0;            /* hilangkan margin default */
+  padding: 0;           /* hilangkan padding default */
+  background: #0f1123;  /* warna background dashboard */
 }
 
 /* Layout utama */
