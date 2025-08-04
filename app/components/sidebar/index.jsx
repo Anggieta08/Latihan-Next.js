@@ -1,36 +1,13 @@
-// components/Sidebar/index.jsx
-"use client";
-
-import React, { useState } from 'react';
+'use client';
 import Link from 'next/link';
 
-const Sidebar = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const toggleDropdown = () => {
-    setShowDropdown((prev) => !prev);
-  };
-
+export default function Sidebar() {
   return (
-    <aside className="sidebar">
-      <h2>Menu</h2>
-      <Link href="/dashboard">📊 Dashboard</Link>
-      <Link href="/user">👤 User</Link>
-
-      <div className="dropdown-container">
-        <button className="dropdown-toggle" onClick={toggleDropdown}>
-          📦 Produk ▾
-        </button>
-        {showDropdown && (
-          <div className="dropdown-menu">
-            <Link href="/produk/generik">• Generik</Link>
-            <Link href="/produk/etikal">• Etikal</Link>
-            <Link href="/produk/otc">• OTC & Herbal</Link>
-            <Link href="/produk/kosmetik">• Kosmetik</Link>
-          </div>
-        )}
-      </div>
-
+    <div className="sidebar">
+      <h2 style={{ marginBottom: '20px' }}>🧭 Menu</h2>
+      <Link href="/dashboard">Beranda</Link>
+      <Link href="/produk/1">Produk</Link>
+ 
       <style jsx>{`
         .sidebar {
           width: 220px;
@@ -39,7 +16,7 @@ const Sidebar = () => {
           padding: 20px;
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 15px;
           min-height: 100vh;
         }
 
@@ -47,48 +24,14 @@ const Sidebar = () => {
           color: white;
           text-decoration: none;
           padding: 8px;
-          border-radius: 4px;
+          border-radius: 6px;
           transition: background 0.3s;
         }
 
         .sidebar a:hover {
           background: #334155;
         }
-
-        .dropdown-container {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .dropdown-toggle {
-          background: none;
-          border: none;
-          color: white;
-          text-align: left;
-          padding: 8px;
-          cursor: pointer;
-          font-size: 16px;
-        }
-
-        .dropdown-menu {
-          display: flex;
-          flex-direction: column;
-          padding-left: 16px;
-          margin-top: 4px;
-        }
-
-        .dropdown-menu a {
-          padding: 4px 8px;
-          font-size: 14px;
-        }
-
-        .dropdown-menu a:hover {
-          background: #475569;
-          border-radius: 4px;
-        }
       `}</style>
-    </aside>
+    </div>
   );
-};
-
-export default Sidebar;
+}

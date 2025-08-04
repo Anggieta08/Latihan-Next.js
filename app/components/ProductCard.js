@@ -1,41 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
-import Image from 'next/image';
+import React from 'react';
 
-export default function ProductCard({ img, title, description, category }) {
+export default function ProductCard({ img, title, description }) {
   return (
-    <div className="card">
-      <Image
-        src={img}
-        alt={title}
-        width={150}
-        height={150}
-        style={{ objectFit: "cover", borderRadius: "8px" }}
-      />
-      <h3>{title}</h3>
-      <p className="category">{category}</p>
-      <p className="desc">{description}</p>
-
-      <style jsx>{`
-        .card {
-          background: #1e293b;
-          padding: 15px;
-          border-radius: 10px;
-          color: #fff;
-          text-align: center;
-        }
-        .card h3 {
-          margin: 10px 0 5px;
-          font-size: 16px;
-        }
-        .card .category {
-          font-weight: bold;
-          color: #93c5fd;
-        }
-        .card .desc {
-          font-size: 13px;
-          color: #e2e8f0;
-        }
-      `}</style>
+    <div style={{
+      background: '#1e293b',
+      borderRadius: '10px',
+      padding: '20px',
+      color: '#fff',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)'
+    }}>
+      <img src={img} alt={title} style={{ width: '100%', borderRadius: '8px', marginBottom: '10px' }} />
+      <h3 style={{ fontSize: '18px', marginBottom: '8px' }}>{title}</h3>
+      <p style={{ fontSize: '14px' }}>{description}</p>
     </div>
   );
 }

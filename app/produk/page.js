@@ -1,74 +1,48 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react';
+import ProductCard from '../components/ProductCard';
+import Sidebar from '../components/sidebar';
+import { products } from '../../data';
+import Link from 'next/link';
 
-export default function Sidebar() {
+export default function ProdukPage() {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const toggleDropdown = () => {
-    setShowDropdown((prev) => !prev);
-  };
 
   return (
-   <><Sidebar />
-   <div className="dropdown-container">
+    <div className="dashboard-container">
+      <Sidebar />
+      <main className="main-content">
+        <h1>📦 Daftar Produk</h1>
+        <div className="product-grid">
+          {products.map((p) => (
+            <><Link key={p.id} href={`/produk/${p.id}`}></Link>
+            <ProductCard key={p.id} title={p.title} img={p.img} description={p.description} /></>
+          ))}
+        </div>
+      </main>
 
-    </div><style jsx>{`
-        .sidebar {
-          width: 220px;
-          background: #1e293b;
-          color: white;
-          padding: 20px;
+      <style jsx>{`
+        .dashboard-container {
           display: flex;
-          flex-direction: column;
-          gap: 12px;
           min-height: 100vh;
+          background: #0f1123;
         }
 
-        .sidebar a {
-          color: white;
-          text-decoration: none;
-          padding: 8px;
-          border-radius: 4px;
-          transition: background 0.3s;
+        .main-content {
+          flex: 1;
+          padding: 30px;
+          color: #fff;
         }
 
-        .sidebar a:hover {
-          background: #334155;
+        .product-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 20px;
+          margin-top: 20px;
         }
-
-        .dropdown-container {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .dropdown-toggle {
-          background: none;
-          border: none;
-          color: white;
-          text-align: left;
-          padding: 8px;
-          cursor: pointer;
-          font-size: 16px;
-        }
-
-        .dropdown-menu {
-          display: flex;
-          flex-direction: column;
-          padding-left: 16px;
-          margin-top: 4px;
-        }
-
-        .dropdown-menu a {
-          padding: 4px 8px;
-          font-size: 14px;
-        }
-
-        .dropdown-menu a:hover {
-          background: #475569;
-          border-radius: 4px;
-        }
-      `}</style></>
+      `}</style>
+    </div>
   );
 }
