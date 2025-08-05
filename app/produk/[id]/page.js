@@ -1,51 +1,68 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useParams } from 'next/navigation';
-import { products } from '../../data/index.js';
+import { products } from '../data';
 import Sidebar from '../../components/sidebar';
-
+import Image from 'next/image';
 
 export default function ProductDetailPage() {
-  const params = useParams(); 
-  const id = parseInt(params.id); 
-  const product = products.find((p) => p.id === id); 
+  const params = useParams();
+  const id = parseInt(params.id);
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     return (
-      <>
+      <div className="container">
         <Sidebar />
-        <div style={{ marginLeft: '200px', padding: '40px', color: 'white' }}>
+        <main className="content">
           <h1>Produk tidak ditemukan</h1>
-        </div>
-      </>
+        </main>
+        <style jsx>{`
+          .container {
+            display: flex;
+            min-height: 100vh;
+            background: #0f1123;
+            color: #fff;
+          }
+          .content {
+            flex: 1;
+            padding: 40px;
+          }
+        `}</style>
+      </div>
     );
   }
 
   return (
-    <>
+    <div className="container">
       <Sidebar />
-      <div
-        style={{
-          marginLeft: '200px',
-          padding: '40px',
-          background: '#0f1123',
-          color: '#fff',
-          minHeight: '100vh',
-        }}
-      >
+      <main className="content">
         <h1>{product.title}</h1>
-        <img
+        <Image
           src={product.img}
           alt={product.title}
+          width={400}
+          height={300}
           style={{
-            width: '400px',
             borderRadius: '8px',
             marginBottom: '20px',
           }}
         />
         <p>{product.description}</p>
-      </div>
-    </>
+      </main>
+
+      <style jsx>{`
+        .container {
+          display: flex;
+          min-height: 100vh;
+          background: #0f1123;
+          color: #fff;
+        }
+        .content {
+          flex: 1;
+          padding: 40px;
+        }
+      `}</style>
+    </div>
   );
 }

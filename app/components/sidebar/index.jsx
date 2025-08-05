@@ -5,8 +5,11 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <h2 style={{ marginBottom: '20px' }}>🧭 Menu</h2>
-      <Link href="/dashboard">Beranda</Link>
-      <Link href="/produk">Produk</Link>
+    <ul>
+      <li><Link href="/produk">Produk</Link></li>
+      <li><Link href="/dashboard">Dashboard</Link></li> 
+    </ul>
+
 
     
       <style jsx>{`

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Landing } from "./components/landing";
+import { Landing } from "../components/landing";
 import { Rules } from "./components/rules";
 import { Footer } from "./components/footer";
 import ImageLogo from '@/public/Gambar/Gambar_Logo.png'
@@ -70,3 +70,7 @@ export default function Page() {
     </main>
   );
 }
+
+var_terima={label}
+tanggal="6 Agustus 2025"
+gambaar={gambarLampu}

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import Sidebar from '../components/sidebar';
-import { products } from '../../data';
+import { products } from './data';
 import Link from 'next/link';
 
 export default function ProdukPage() {
@@ -17,8 +17,10 @@ export default function ProdukPage() {
         <h1>📦 Daftar Produk</h1>
         <div className="product-grid">
           {products.map((p) => (
-            <><Link key={p.id} href={`/produk/${p.id}`}></Link>
-            <ProductCard key={p.id} title={p.title} img={p.img} description={p.description} /></>
+          <Link key={p.id} href={`/produk/${p.id}`}>
+              <ProductCard title={p.title} img={p.img} description={p.description} />
+          </Link>
+
           ))}
         </div>
       </main>
