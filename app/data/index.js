@@ -10,9 +10,7 @@
       id: 2,
       img: "/Gambar/etIkall.jpeg",
       title: "ETIKAL",
-      description: "Obat Etikal ditandai dengan lingkaran berwarna merah dan bergaris tepi hitam dengan tulisan K warna hitam di dalam lingkaran warna merah.",
-      description: "Kimia Farma memproduksi lebih dari 100 produk etikal yang diproduksi dengan kualitas dan mutu yang terjamin. Beberapa produk unggulan Kimia Farma seperti Lipidef, Merokaf, Avicov Favipiravir, Tecavir, Alergine, Kimoxil, Loprezol, Rahistin, Kifarox, dan Protofen bisa didapatkan di berbagai apotek di seluruh Indonesia",
-
+      description: "Obat Etikal ditandai dengan lingkaran berwarna merah dan bergaris tepi hitam dengan tulisan K warna hitam di dalam lingkaran warna merah Kimia Farma memproduksi lebih dari 100 produk etikal yang diproduksi dengan kualitas dan mutu yang terjamin. Beberapa produk unggulan Kimia Farma seperti Lipidef, Merokaf, Avicov Favipiravir, Tecavir, Alergine, Kimoxil, Loprezol, Rahistin, Kifarox, dan Protofen bisa didapatkan di berbagai apotek di seluruh Indonesia",
     },
     {
       id: 3,

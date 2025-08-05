@@ -6,8 +6,9 @@ export default function Sidebar() {
     <div className="sidebar">
       <h2 style={{ marginBottom: '20px' }}>🧭 Menu</h2>
       <Link href="/dashboard">Beranda</Link>
-      <Link href="/produk/1">Produk</Link>
- 
+      <Link href="/produk">Produk</Link>
+
+    
       <style jsx>{`
         .sidebar {
           width: 220px;

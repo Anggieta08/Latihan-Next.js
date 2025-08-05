@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Sidebar from "../components/sidebar/index.jsx";
+import Sidebar from "../components/Sidebar/index.jsx";
 
 export default function UserPage() {
   const users = [
@@ -27,7 +27,7 @@ export default function UserPage() {
             <span>Email</span>
             <span>Role</span>
           </div>
-          {users.map((user) => (
+          {users.map((user) => (  
             <div key={user.id} className="table-row">
               <span>{user.id}</span>
               <span>{user.name}</span>
