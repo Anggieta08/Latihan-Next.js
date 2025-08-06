@@ -5,15 +5,27 @@ import React from 'react';
 export default function ProductCard({ img, title, description }) {
   return (
     <div style={{
-      background: '#1e293b',
-      borderRadius: '10px',
+      background: '#ffffff',
+      borderRadius: '12px',
       padding: '20px',
-      color: '#fff',
-      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)'
+      color: '#1f2937',
+      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)',
+      transition: 'transform 0.2s',
+      height: '100%',
     }}>
-      <img src={img} alt={title} style={{ width: '100%', borderRadius: '8px', marginBottom: '10px' }} />
-      <h3 style={{ fontSize: '18px', marginBottom: '8px' }}>{title}</h3>
-      <p style={{ fontSize: '14px' }}>{description}</p>
+      <img
+        src={img}
+        alt={title}
+        style={{
+          width: '100%',
+          borderRadius: '10px',
+          marginBottom: '12px',
+          objectFit: 'cover',
+          maxHeight: '180px',
+        }}
+      />
+      <h3 style={{ fontSize: '18px', marginBottom: '10px', color: '#2563eb' }}>{title}</h3>
+      <p style={{ fontSize: '14px', lineHeight: '1.5' }}>{description}</p>
     </div>
   );
 }
