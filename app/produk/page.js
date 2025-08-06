@@ -9,7 +9,6 @@ import Link from 'next/link';
 export default function ProdukPage() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter berdasarkan kata dalam title/description
   const filteredProducts = products.filter((p) =>
     (p.title + ' ' + p.description).toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -20,30 +19,24 @@ export default function ProdukPage() {
       <main className="main-content">
         <h1>📦 Daftar Produk</h1>
 
-        {/* 🔍 Input pencarian */}
         <input
           type="text"
-          placeholder="Cari produk (contoh: generik)"
+          placeholder="Search Di Sini (contoh: generik)"
           className="search-input"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        {/* 📦 Daftar produk */}
         <div className="product-grid">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((p) => (
-              <div key={p.id} className="card-wrapper">
-                <Link href={`/produk/${p.id}`}>
-                  <a className="card-link">
-                    <ProductCard
-                      title={p.title}
-                      img={p.img}
-                      description={p.description}
-                    />
-                  </a>
-                </Link>
-              </div>
+              <Link key={p.id} href={`/produk/${p.id}`} className="card-link">
+                <ProductCard
+                  title={p.title}
+                  img={p.img}
+                  description={p.description}
+                />
+              </Link>
             ))
           ) : (
             <p style={{ marginTop: '20px' }}>Tidak ada produk ditemukan.</p>
@@ -51,53 +44,41 @@ export default function ProdukPage() {
         </div>
       </main>
 
-      {/* 💅 Styling */}
       <style jsx>{`
         .dashboard-container {
           display: flex;
           min-height: 100vh;
           background: #0f1123;
+          overflow-x: hidden;
         }
 
         .main-content {
           flex: 1;
           padding: 30px;
           color: #fff;
-        }
-
-        h1 {
-          font-size: 28px;
-          margin-bottom: 20px;
-          color: #facc15;
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
         .search-input {
-          padding: 12px 16px;
-          border-radius: 8px;
-          border: none;
           width: 100%;
-          max-width: 600px;
-          margin-bottom: 30px;
-          font-size: 16px;
-          color: #111827;
+          max-width: 400px;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-radius: 6px;
+          border: none;
         }
 
         .product-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           gap: 24px;
-        }
-
-        .card-wrapper {
-          width: 100%;
-          height: 100%;
+          margin-top: 20px;
         }
 
         .card-link {
           text-decoration: none;
           color: inherit;
-          display: block;
-          height: 100%;
         }
       `}</style>
     </div>

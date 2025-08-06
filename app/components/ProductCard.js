@@ -12,18 +12,19 @@ export default function ProductCard({ img, title, description }) {
       boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)',
       transition: 'transform 0.2s',
       height: '100%',
+      width:'300px'
     }}>
-      <img
-        src={img}
-        alt={title}
-        style={{
-          width: '100%',
-          borderRadius: '10px',
-          marginBottom: '12px',
-          objectFit: 'cover',
-          maxHeight: '180px',
-        }}
-      />
+     <img
+  src={img}
+  alt={title}
+  style={{
+    width: '100%',
+    height: 'auto',
+    borderRadius: '10px',
+    marginBottom: '12px',
+    objectFit: 'contain', 
+  }}
+/>
       <h3 style={{ fontSize: '18px', marginBottom: '10px', color: '#2563eb' }}>{title}</h3>
       <p style={{ fontSize: '14px', lineHeight: '1.5' }}>{description}</p>
     </div>
