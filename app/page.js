@@ -4,10 +4,7 @@ import Image from "next/image";
 import { Landing } from "./components/landing";
 import { Rules } from "./components/rules";
 import { Footer } from "./components/footer";
-import ImageLogo from '@/public/Gambar/Gambar_Logo.png'
-import ImageKaca_Pembesar from '@/public/Gambar/Kaca_Pembesar.png'
-import Imagesel from '@/public/Gambar/sel.png'
-import Imagevirus from '@/public/Gambar/virus.png'
+
 
 
 const gambarBunga = "/Gambar/Gambar_Bunga.png";

@@ -1,13 +1,6 @@
 import React , { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import ImageBiondFest from '@/public/Gambar/Gambar_BiondFest.png'
-import ImageLampu from '@/public/Gambar/Gambar_Lampu.png'
-import ImageTanganKanan from '@/public/Gambar/Gambar_Tangan_Kanan.png'
-import ImageTanganKiri from '@/public/Gambar/Gambar_Tangan_Kiri.png'
-import Gambar_Lampu from '@/public/Gambar/Gambar_Lampu.png';
-import Imagesel from '@/public/Gambar/sel.png';
-import Imagevirus from '@/public/Gambar/virus.png';
 
 
 export const Landing = ({var_terima, tanggal, gambar, gambar_logo, kaca_pembesar, sel, virus,  }) => {

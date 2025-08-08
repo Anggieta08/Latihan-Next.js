@@ -1,7 +1,6 @@
 'use client';
 import React from 'react'
 import Link from 'next/link'
-import GambarFooter from '@/public/Gambar/Gambar_Logo.png';
 import Image from 'next/image';
 
 export default function Page() {
