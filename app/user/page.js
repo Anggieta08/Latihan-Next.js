@@ -13,7 +13,7 @@ export default function UserPage() {
 
   return (
     <div className="dashboard-container">
-     <Sidebar/>
+<Sidebar/>
 
       <main className="main-content">
         <div className="header">
@@ -77,7 +77,7 @@ export default function UserPage() {
           flex: 1;
           padding: 30px;
           color: #1e293b;
-          background: white;
+          background: #1c2a47;
         }
 
         .header {
@@ -87,7 +87,7 @@ export default function UserPage() {
         .header h1 {
           margin: 0;
           font-size: 24px;
-          color: #1e293b;
+          color: #ffffffff;
         }
 
         .user-table {
@@ -102,7 +102,7 @@ export default function UserPage() {
           grid-template-columns: 1fr 2fr 3fr 1fr;
           padding: 12px 20px;
           background: #1e293b;
-          color: #cbd5e1;
+          color: #ffffffff;
           font-weight: 600;
           border-bottom: 2px solid #334155;
         }
@@ -116,11 +116,11 @@ export default function UserPage() {
           border-radius: 8px;
           align-items: center;
           transition: background 0.2s ease;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 2px 4px rgba(146, 78, 78, 0.05);
         }
 
         .table-row:hover {
-          background: #f1f5f9;
+          background: #32456b;
         }
 
         .badge {
@@ -131,7 +131,7 @@ export default function UserPage() {
           font-weight: 600;
           color: white;
           text-align: center;
-        }
+        } 
 
         .badge.admin {
           background: #ef4444;
@@ -144,6 +144,36 @@ export default function UserPage() {
         .badge.editor {
           background: #f59e0b;
         }
+
+        .user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th {
+  background: #1e293b; /* warna sidebar */
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.user-table td {
+  background: #b3caeeff; /* warna sidebar */
+  color: white;
+  padding: 12px;
+  border-bottom: 1px solid #334155;
+}
+
+.user-table tr:hover td {
+  background: #9cbeeeff; /* sedikit lebih terang saat hover */
+}
+
+.user-role {
+  background: #10b981; /* hijau untuk role */
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
       `}</style>
     </div>
   );
