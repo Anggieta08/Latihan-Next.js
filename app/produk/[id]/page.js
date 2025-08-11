@@ -61,38 +61,49 @@ export default function ProductDetailPage() {
         </div>
       </main>
 
-      <style jsx>{`
-        .container {
-          display: flex;
-          min-height: 100vh;
-          background: #0f1123;
-          color: #fff;
-        }
-        .content {
-          flex: 1;
-          padding: 40px;
-        }
-        .product-detail-card {
-          background: #1a1c2c;
-          padding: 30px;
-          border-radius: 10px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-          max-width: 600px;
-        }
-        .back-button {
-          margin-top: 20px;
-          background-color: #ffffff10;
-          border: none;
-          padding: 10px 16px;
-          color: #fff;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: background 0.2s ease;
-        }
-        .back-button:hover {
-          background-color: #ffffff30;
-        }
-      `}</style>
+     <style jsx>{`
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    color: white;
+    box-shadow: 0 0 10px rgba(96,165,250,0.3);
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px) scale(1.03);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .product-card h4 {
+    font-size: 18px;
+    margin: 15px;
+    color: #93c5fd;
+  }
+
+  .badge {
+    background: #60a5fa;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin-left: 15px;
+  }
+`}</style>
+
     </div>
   );
 }
